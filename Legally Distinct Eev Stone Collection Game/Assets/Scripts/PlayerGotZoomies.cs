@@ -5,24 +5,24 @@ using UnityEngine;
 public class PlayerGotZoomies : MonoBehaviour
 {
 
-    private float speed = 12.0f;
-    private Rigidbody PlayerRB;
+    private float speed = 10.0f;
+    private Rigidbody playerRb;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        PlayerRB = GetComponent<Rigidbody>();
+        playerRb = GetComponent<Rigidbody>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizotal");
+        float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        PlayerRB.AddForce(Vector3.forward * speed * verticalInput);
-        PlayerRB.AddForce(Vector3.right * speed * horizontalInput);
+        playerRb.AddForce(Vector3.forward * speed * verticalInput);
+        playerRb.AddForce(Vector3.right * speed * horizontalInput);
     }
 }
